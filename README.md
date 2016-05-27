@@ -2,7 +2,8 @@
 
 ##By: Peter Beach
 
-##Description: A website where you can enter a github user name in order to display information about that user's repositories and account.
+##Description: 
+A website where you can enter a github user name in order to display information about that user's repositories and account.
 
 
 ##Set-Up:
