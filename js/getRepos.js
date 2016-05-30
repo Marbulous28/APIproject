@@ -2,9 +2,8 @@ var apiKey = require('./../.env').apiKey;
 
 exports.getRepos = function(accountName){
   $.get('https://api.github.com/users/' + accountName + '/repos?access_token=' + apiKey).then(function(response){
-    console.log(response);
-    for (i = 0; i < 29; i++) {
-      $('.repoList').prepend("<br><br>" + "<li> Repository Name:  " + response[i].name + "<br> " + "   Repository Description  : " + response[i].description + " </li>");
+    for (i = 0; i < response.length; i++) {
+      $('.repoList').append("<br>" + "<li> Repository Name:  " + response[i].name + "<br> " + "   Repository Description  : " + response[i].description + "<br>" + "Created at: " + response[i].created_at + " </li>");
     }
     }).fail(function(error){
     console.log(error.responseJSON.message);
